@@ -19,10 +19,12 @@ class _SplashPageState extends State<SplashPage> {
       () => context.pushReplacement(LoginPage()),
     );
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(96.0),
-        child: Center(
-          child: Assets.images.logoBlue.image(),
+      body: Future(
+        child: Padding(
+          padding: const EdgeInsets.all(96.0),
+          child: Center(
+            child: Assets.images.logoBlue.image(),
+          ),
         ),
       ),
       bottomNavigationBar: SizedBox(
