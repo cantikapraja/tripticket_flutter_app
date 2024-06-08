@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tripticket_app/presentation/home/logout_page.dart';
+import 'package:flutter_tripticket_app/presentation/home/widgets/pages/order_page.dart';
 
 import '../../core/core.dart';
 import 'widgets/nav_item.dart';
@@ -13,10 +15,11 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   final _pages = [
-    Center(child: const Text('Home')),
+    OrderPage(),
     Center(child: const Text('Ticket')),
     Center(child: const Text('History')),
-    Center(child: const Text('Setting')),
+    // Center(child: const Text('Setting')),
+    LogoutPage(),
   ];
 
   void _onItemTapped(int index) {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tripticket_app/data/datasources/auth_remote_datasource.dart';
+import 'package:flutter_tripticket_app/data/datasources/product_remote_datasource.dart';
+import 'package:flutter_tripticket_app/presentation/home/bloc/product/product_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_tripticket_app/presentation/auth/bloc/logout/logout_bloc.dart';
 
@@ -26,8 +28,12 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => LogoutBloc(AuthRemoteDatasource()),
         ),
+        BlocProvider(
+          create: (context) => ProductBloc(ProductRemoteDatasource()),
+        ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
